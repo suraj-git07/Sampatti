@@ -1,9 +1,20 @@
 import {useEffect} from 'react'
 import * as THREE from "three";
+import Map from '../Map';
+import { TweenMax,Power1 } from 'gsap/gsap-core';
+import Navbar from '../Navbar';
+
 const City2 = () => {
+  var camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 500);
+  var navy=0,navx=0;
     useEffect(() => {
         var renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
+
+        function mathRandom(num = 8) {
+          var numValue = - Math.random() * num + Math.random() * num;
+          return numValue;
+        };
 
         if (window.innerWidth > 800) {
             renderer.shadowMap.enabled = true;
@@ -20,7 +31,6 @@ const City2 = () => {
             renderer.setSize(window.innerWidth, window.innerHeight);
         };
 
-        var camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 500);
 
         camera.position.set(0, 2, 14);
 
@@ -29,11 +39,13 @@ const City2 = () => {
 
         var uSpeed = 0.002;
 
-        var setcolor1 = 0xFDB813;
+        var setcolor1 = 0xffd05e;
         var setcolor = 0xFF6347;
 
         scene.background = new THREE.Color(setcolor);
-        scene.fog = new THREE.Fog(setcolor1, 5, 50);
+        scene.fog = new THREE.Fog(setcolor1, 5, 30);
+
+        var createCarPos=true;
         const loader = new THREE.ObjectLoader();
 
         var jso= [
@@ -3811,14 +3823,57 @@ const City2 = () => {
             }
             )
           })
+          var gmaterial = new THREE.MeshToonMaterial({color:0xFFFF00, side:THREE.DoubleSide});
+            var gparticular = new THREE.CircleGeometry(0.01, 3);
+            var aparticular = 5;
+            
+            for (var h = 1; h<300; h++) {
+              var particular = new THREE.Mesh(gparticular, gmaterial);
+              particular.position.set(mathRandom(aparticular), mathRandom(aparticular),mathRandom(aparticular));
+              particular.rotation.set(mathRandom(),mathRandom(),mathRandom());
+              smoke.add(particular);
+            }
 
         var raycaster = new THREE.Raycaster();
         var mouse = new THREE.Vector2();
 
+        var createCars = function(cScale = 2, cPos = 20, cColor = 0xFFFF00) {
+          var cMat = new THREE.MeshToonMaterial({color:cColor, side:THREE.DoubleSide});
+          var cGeo = new THREE.BoxGeometry(1, cScale/40, cScale/40);
+          var cElem = new THREE.Mesh(cGeo, cMat);
+          var cAmp = 3;
+          
+          if (createCarPos) {
+            createCarPos = false;
+            cElem.position.x = -cPos;
+            cElem.position.z = (mathRandom(cAmp));
+        
+            TweenMax.to(cElem.position, 3, {x:cPos, repeat:-1, yoyo:true, delay:mathRandom(3)});
+          } else {
+            createCarPos = true;
+            cElem.position.x = (mathRandom(cAmp));
+            cElem.position.z = -cPos;
+            cElem.rotation.y = 90 * Math.PI / 180;
+          
+            TweenMax.to(cElem.position, 5, {z:cPos, repeat:-1, yoyo:true, delay:mathRandom(3), ease:Power1.easeInOut});
+          };
+          cElem.receiveShadow = true;
+          cElem.castShadow = true;
+          cElem.position.y = Math.abs(mathRandom(5));
+          scene.add(cElem);
+        };
+        
+        var generateLines = function() {
+          for (var i = 0; i<100; i++) {
+            createCars(0.1, 20);
+          };
+        };
+        generateLines()
+
         function onMouseMove(event) {
             event.preventDefault();
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            mouse.y = -(event.clientY / window.innerHeight) *2  + 1;
         };
         function onDocumentTouchStart(event) {
             if (event.touches.length === 1) {
@@ -3845,6 +3900,7 @@ const City2 = () => {
             raycaster.setFromCamera(mouse, camera);
             var intersects = raycaster.intersectObjects(scene.children);
             if (intersects.length > 0) {
+              // window.alert("Do you want to buy this building")
                 intersects[0].object.material.color.set(0xff0000);
             }
         }
@@ -3889,12 +3945,16 @@ const City2 = () => {
 
             camera.lookAt(scene.position);
             renderer.render(scene, camera);
-        }
-      animate()
+          }
+          animate()
+          navy=camera.position.y;
+          navx=camera.position.x;
     }, [])
     
   return (
-    null
+    <>
+    <Map />
+    </>
   )
 }
 

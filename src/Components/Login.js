@@ -28,6 +28,7 @@ function Login() {
 
   useEffect(() => {
     initialize();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
