@@ -3900,8 +3900,8 @@ const City2 = () => {
             raycaster.setFromCamera(mouse, camera);
             var intersects = raycaster.intersectObjects(scene.children);
             if (intersects.length > 0) {
-              window.alert("Do you want to buy this building")
-                // intersects[0].object.material.color.set(0xff0000);
+              // window.alert("Do you want to buy this building")
+                intersects[0].object.material.color.set(0xff0000);
             }
         }
         window.addEventListener('mousemove', onMouseMove, false);
@@ -3953,7 +3953,6 @@ const City2 = () => {
     
   return (
     <>
-    <Navbar y={navx} x={navy}/>
     <Map />
     </>
   )

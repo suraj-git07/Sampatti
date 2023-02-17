@@ -1,0 +1,8 @@
+.dash-blur {
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 30px;
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+}

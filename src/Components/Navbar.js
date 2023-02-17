@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState } from "react";
 // import { AiFillHome } from "react-icons/ai";
 // import { FaUserAlt } from "react-icons/fa";
 // import { HiUserGroup } from "react-icons/hi";
@@ -14,7 +14,7 @@ function Navbar(props) {
             // onMouseEnter={() => setshow(true)}
             // onMouseLeave={() => setshow(false)}
           >
-            <h2 className=" font-bold">DELHI ({`${props.y},${props.x}`})</h2>
+            <h2 className=" font-bold">DELHI (28.7041° N, 77.1025° E)</h2>
           {/* </div> */}
         </div>
       </div>

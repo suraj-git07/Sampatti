@@ -4,6 +4,7 @@ import Sidebar from "./Components/Sidebar";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import City2 from "./Components/City/City2";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
   return (
