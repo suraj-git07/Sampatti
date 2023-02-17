@@ -2,11 +2,11 @@ import {useEffect} from 'react'
 import * as THREE from "three";
 import Map from '../Map';
 import { TweenMax,Power1 } from 'gsap/gsap-core';
-import Navbar from '../Navbar';
+// import Navbar from '../Navbar';
 
 const City2 = () => {
   var camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 500);
-  var navy=0,navx=0;
+  // var navy=0,navx=0;
     useEffect(() => {
         var renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -3890,8 +3890,11 @@ const City2 = () => {
             }
         }
         function OnScrollMouse(event) {
-            event.preventDefault();
-            camera.position.z += event.deltaY / 500;
+            // event.preventDefault();
+            if(camera.position.z<=18)
+            {
+              camera.position.z += event.deltaY / 500;
+            }
         }
 
         function onDocumentMouseDown(event) {
@@ -3947,8 +3950,7 @@ const City2 = () => {
             renderer.render(scene, camera);
           }
           animate()
-          navy=camera.position.y;
-          navx=camera.position.x;
+          // eslint-disable-next-line
     }, [])
     
   return (
