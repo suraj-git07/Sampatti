@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import Sidebar from "./Components/Sidebar";
 import Modal from "./Components/Modal";
+import "./App.css";
+import City2 from "./Components/City/City2";
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       <Router>
         <Sidebar />
         <Routes>
-          <Route path="/" element={<Modal />} />
+          <Route path="/" element={<City2 />} />
         </Routes>
       </Router>
     </div>
