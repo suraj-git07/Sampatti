@@ -3,7 +3,7 @@ import { FaEthereum } from "react-icons/fa";
 import "./CSS/dashboard.css";
 function Dashboard() {
   return (
-    <div className=" fixed right-0 z-20 ">
+    <div className=" fixed right-0 z-[-1] ">
       <div className="text-white    sidebar-blur h-[100vh] w-[100vw]">
         <div>
           {/* <div className=" ">Dashboard</div> */}

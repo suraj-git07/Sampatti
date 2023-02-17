@@ -2,9 +2,9 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 import "./App.css";
-import Navbar from "./Components/Navbar";
+// import Navbar from "./Components/Navbar";
 import City2 from "./Components/City/City2";
-import Dashboard from "./Components/Dashboard";
+// import Dashboard from "./Components/Dashboard";
 
 function App() {
   return (
