@@ -6,6 +6,7 @@ import Sidebar from "./Components/Sidebar";
 import Modal from "./Components/Modal";
 import "./App.css";
 import City2 from "./Components/City/City2";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
   return (
