@@ -1,8 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./Components/Login";
+import Sidebar from "./Components/Sidebar";
+import Modal from "./Components/Modal";
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div>
+      <Router>
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Modal />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
