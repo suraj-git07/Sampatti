@@ -3926,7 +3926,7 @@ const City2 = () => {
               // window.alert("Do you want to buy this building")
               // intersects[0].object.material.color.set(0xff0000);
               // console.log(intersects[0].object.material.uuid);
-              // setismodalshown(!ismodalshown)
+              setismodalshown(!ismodalshown)
               // <Modal />
             }
         }
