@@ -1,16 +1,20 @@
-import React from "react";
+import { React, useState } from "react";
 import { FaEthereum } from "react-icons/fa";
+import CreateNft from "./CreateNft";
 import "./CSS/dashboard.css";
 function Dashboard() {
+ 
   return (
-    <div className=" fixed right-0 z-[-1] ">
-      <div className="text-white    sidebar-blur h-[100vh] w-[100vw]">
+    <div className=" fixed right-0 z-2 cursor-default">
+      <div className="text-white    sidebar-blur h-screen w-screen">
         <div>
           {/* <div className=" ">Dashboard</div> */}
           <div className=" flex justify-center items-center gap-x-12 ">
             {/* LEFT HERO */}
             <div>
-              <div className="text-slate-200 text-3xl font-bold">Your NFT's</div>
+              <div className="text-slate-200 text-3xl font-bold">
+                Your NFT's
+              </div>
               <div className="flex gap-5 basis-2/3 mt-20">
                 <img
                   className="h-48 rounded-3xl "
@@ -34,9 +38,13 @@ function Dashboard() {
                   alt=""
                 />
               </div>
-              <button className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-64 cursor-pointer">
+              <button
+                className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-64 cursor-pointer"
+                
+              >
                 Create Your NFT
               </button>
+              
             </div>
 
             {/* Right Hero */}
