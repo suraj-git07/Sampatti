@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import Player1 from "./Livepeer";
+import meta from "../metadata/1.json"
 import "./CSS/modal.css";
 function Modal() {
   return (
@@ -15,7 +16,7 @@ function Modal() {
               <div>Phone No : </div>
             </div>
           </div>
-          <div className="basis-1/2"><Player1 link name /></div>
+          <div className="basis-1/2"><Player1 link={meta.videoLink} name={meta.name} /></div>
         </div>
       </div>
     </div>

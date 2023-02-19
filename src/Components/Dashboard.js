@@ -1,6 +1,9 @@
 import { React, useState } from "react";
 import { FaEthereum } from "react-icons/fa";
 import CreateNft from "./CreateNft";
+import meta1 from "../metadata/1.json"
+import meta2 from "../metadata/2.json"
+import meta3 from "../metadata/3.json"
 import "./CSS/dashboard.css";
 function Dashboard() {
   return (
@@ -19,23 +22,17 @@ function Dashboard() {
               <div className="flex gap-5 basis-2/3 mt-20">
                 <img
                   className="h-48 rounded-3xl "
-                  src="http://images4.fanpop.com/image/photos/22500000/Cool-Photos-happy-square-sponge-22529919-512-512.jpg"
-                  alt=""
-                />
-
-                <img
-                  className="h-48 rounded-3xl "
-                  src="http://images4.fanpop.com/image/photos/22500000/Cool-Photos-happy-square-sponge-22529919-512-512.jpg"
+                  src={meta1.image}
                   alt=""
                 />
                 <img
                   className="h-48 rounded-3xl "
-                  src="http://images4.fanpop.com/image/photos/22500000/Cool-Photos-happy-square-sponge-22529919-512-512.jpg"
+                  src={meta2.image}
                   alt=""
                 />
                 <img
                   className="h-48 rounded-3xl "
-                  src="http://images4.fanpop.com/image/photos/22500000/Cool-Photos-happy-square-sponge-22529919-512-512.jpg"
+                  src={meta3.image}
                   alt=""
                 />
               </div>
