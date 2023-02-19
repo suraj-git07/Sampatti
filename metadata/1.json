@@ -1,0 +1,33 @@
+{
+    "name": "Luxury Penthouse",
+    "address": "D8/21 DLF Central delhi rajiv chowk New Delhi 110055  " ,
+    "description": "Luxury Penthouse located in the heart of Central Delhi",
+    "image": "https://ipfs.io/ipfs/QmQUozrHLAusXDxrvsESJ3PYB3rUeUuBAvVWw6nop2uu7c/1.png",
+    "id": "1",
+    "attributes": [
+        {
+            "trait_type": "Selling Status",
+            "value": "Yes"
+        },
+        {
+            "trait_type": "Type of Residence",
+            "value": "Condo"
+        },
+        {
+            "trait_type": "Bed Rooms",
+            "value": 2
+        },
+        {
+            "trait_type": "Bathrooms",
+            "value": 3
+        },
+        {
+            "trait_type": "Square Feet",
+            "value": 2200
+        },
+        {
+            "trait_type": "Year Built",
+            "value": 2013
+        }
+    ]
+}

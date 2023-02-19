@@ -7,20 +7,50 @@
 const hre = require("hardhat");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  // accounts
+  [owner, goalCreator, validator, vaidator, validator] =
+    await hre.ethers.getSigners();
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+  // Deploy SPTToken
+  const sptToken = await hre.ethers.getContractFactory("SPTToken");
+  const sptTokenContract = await sptToken.deploy();
+  await sptTokenContract.deployed();
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  console.log("address of sptToken:", sptTokenContract.address);
 
-  await lock.deployed();
-
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+  // Deploy Sampatti
+  const sampatti = await hre.ethers.getContractFactory("Sampatti");
+  const sampattiContract = await sampatti.deploy(
+    5,
+    20,
+    sptTokenContract.address,
+    100
   );
+  await sampattiContract.deployed();
+
+  console.log("address of Sampatti Contract :", sampattiContract.address);
+
+  // Deploy NFT Mint and mint some nfts
+
+  const nftMint = await hre.ethers.getContractFactory("NFTmint");
+  const nftMintContract = await nftMint.deploy();
+  await nftMintContract.deployed();
+  console.log("address of NFTMint Contract :", nftMintContract.address);
+
+  console.log("Minting NFTs");
+  for (let i = 0; i < 3; i++) {
+    const transaction = await nftMintContract
+      .connect(goalCreator)
+      .safeMint(
+        `https://ipfs.io/pfs/QmTx6Z41oTduKtLiiGrggnBB73rX31mQApruwqnjc4A7ry/${
+          i + 1
+        }.json`
+      );
+    await transaction.wait();
+  }
+
+  console.log("NFT Minted");
+  console.log("Finished !!");
 }
 
 // We recommend this pattern to be able to use async/await everywhere
