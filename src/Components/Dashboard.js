@@ -5,7 +5,10 @@ import "./CSS/dashboard.css";
 function Dashboard() {
  
   return (
-    <div className=" fixed right-0 z-2 cursor-default">
+    
+    <div className=" fixed right-0 z-[-1] cursor-default">
+      {/* <div  className="h-screen w-screen  "></div> */}
+
       <div className="text-white    sidebar-blur h-screen w-screen">
         <div>
           {/* <div className=" ">Dashboard</div> */}
@@ -38,13 +41,9 @@ function Dashboard() {
                   alt=""
                 />
               </div>
-              <button
-                className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-64 cursor-pointer"
-                
-              >
+              {/* <button className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-64 cursor-pointer">
                 Create Your NFT
-              </button>
-              
+              </button> */}
             </div>
 
             {/* Right Hero */}
@@ -65,13 +64,15 @@ function Dashboard() {
                   <div>
                     <FaEthereum size={30} />
                   </div>
-                  <div>Your Validates</div>
+                 <button>
+                  Buy Tokens
+                 </button>
                 </div>
                 <div className="flex items-center justify-center mt-16">
                   {" "}
                   <FaEthereum size={30} />{" "}
                 </div>
-                <div className="mt-2 font-semibold">20 STK</div>
+                <div className="mt-2 font-semibold">20 STP</div>
               </div>
               <button className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-20 cursor-pointer">
                 Become A Validator
