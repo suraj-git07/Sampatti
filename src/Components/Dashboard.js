@@ -16,16 +16,14 @@ function Dashboard() {
           <div className=" flex justify-center items-center gap-x-12 ">
             {/* LEFT HERO */}
             <div>
-              <div className="text-slate-200 text-3xl font-bold">
-                Your NFT
-              </div>
+              <div className="text-slate-200 text-3xl font-bold">My Proposals/Assets</div>
               <div className="flex gap-5 basis-2/3 mt-20">
                 <div class="card 1">
                   <div class="card_image">
                     {" "}
                     <img src={meta1.image} />{" "}
                   </div>
-                  <div class="card_title title-white">
+                  <div class="text-3xl font-bold mt-4">
                     <p>{meta1.name}</p>
                   </div>
                 </div>
@@ -34,7 +32,7 @@ function Dashboard() {
                     {" "}
                     <img src={meta2.image} />{" "}
                   </div>
-                  <div class="card_title title-white">
+                  <div class="text-3xl font-bold mt-4">
                     <p>{meta2.name}</p>
                   </div>
                 </div>
@@ -43,7 +41,7 @@ function Dashboard() {
                     {" "}
                     <img src={meta3.image} />{" "}
                   </div>
-                  <div class="card_title title-white">
+                  <div class="text-3xl font-bold mt-4">
                     <p>{meta3.name}</p>
                   </div>
                 </div>
