@@ -43,6 +43,7 @@ function Login({ toggleLgin, lgin }) {
       if (initialized) {
         if (loggedIn) {
           const acc = await getAccounts();
+          console.log(acc)
           setAccount(acc[0]);
           setLoading(false);
         } else {

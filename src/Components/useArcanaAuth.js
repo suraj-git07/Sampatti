@@ -35,6 +35,7 @@ function useArcanaAuth() {
   //Getting user Accounts
   const getAccounts = async () => {
     if (initialized) {
+      // console.log(auth.provider)
       return await auth.provider.request({ method: "eth_accounts" });
     }
   };
@@ -49,6 +50,8 @@ function useArcanaAuth() {
 
   useEffect(() => {
     const checkLogin = async () => {
+      console.log(auth);
+      // console.log( )
       await auth.init();
       if (await auth.isLoggedIn()) {
         setLoggedIn(true);

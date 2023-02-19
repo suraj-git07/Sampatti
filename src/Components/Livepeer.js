@@ -1,11 +1,10 @@
 import { Player } from "@livepeer/react";
 // import Image from 'next/image';
-
+import { useEffect } from "react";
 // import blenderPoster from '../../../public/images/blender-poster.png';
 
 async function Player1({ link, name }) {
   // console.log(typeof link);
-
   var data;
 
   var url = "https://livepeer.studio/api/asset/import";
@@ -23,8 +22,8 @@ async function Player1({ link, name }) {
   };
   try {
     const response = await fetch(url, options);
-    data = await response.json();
     console.log(data);
+    data = await response.json();
   } catch (error) {
     console.log(error);
   }
@@ -32,17 +31,21 @@ async function Player1({ link, name }) {
 
   // console.log(data);
 
-  const id = data.asset.playbackId;
+  const id =  data.asset.playbackId;
   // console.log(id);
+  useEffect(() => {
+    console.log(id)
+  }, [])
 
     return (
-      <Player
-        title={name}
-        playbackId = {id}
-        showPipButton
-        objectFit="cover"
-        priority
-      />
+      // <Player
+      //   title={name}
+      //   playbackId = {id}
+      //   showPipButton
+      //   objectFit="cover"
+      //   priority
+      // />
+      <></>
     );
 }
 
