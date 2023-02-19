@@ -1,42 +1,25 @@
 import { React, useState } from "react";
-import "./CSS/modal.css"
+import Player1 from "./Livepeer";
+import "./CSS/modal.css";
 function Modal() {
-  const [modal, setModal] = useState(false);
-  const toggleModal = () => {
-    setModal(!modal);
-  };
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
-    return (
-      <>
-        <button onClick={toggleModal} className="">
-          Open
-        </button>
-
-        {modal && (
-          <div className="modal">
-            <div onClick={toggleModal} className="overlay"></div>
-            <div className="modal-content">
-              <h2>Lorem, ipsum.</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Provident perferendis suscipit officia recusandae, eveniet
-                quaerat assumenda id fugit, dignissimos maxime non natus placeat
-                illo iusto! Sapiente dolorum id maiores dolores? Illum pariatur
-                possimus quaerat ipsum quos molestiae rem aspernatur dicta
-                tenetur. Sunt placeat tempora vitae enim incidunt porro fuga ea.
-              </p>
-              <button className="close-modal" onClick={toggleModal}>
-                X
-              </button>
+  return (
+    <div className=" ">
+      <div className="modal9 ">
+        <div className="overlay9"></div>
+        <div className="modal-content9 flex ">
+          <div className="basis-1/2">
+            <div className="text-3xl ">Details</div>
+            <div>
+              <div>Name : </div>
+              <div>Address : </div>
+              <div>Phone No : </div>
             </div>
           </div>
-        )}
-      </>
-    );
+          <div className="basis-1/2">{/* <Player1 link name /> */}</div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Modal;

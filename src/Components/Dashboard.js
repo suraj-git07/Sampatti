@@ -3,9 +3,7 @@ import { FaEthereum } from "react-icons/fa";
 import CreateNft from "./CreateNft";
 import "./CSS/dashboard.css";
 function Dashboard() {
- 
   return (
-    
     <div className=" fixed right-0 z-[-1] cursor-default">
       {/* <div  className="h-screen w-screen  "></div> */}
 
@@ -64,16 +62,12 @@ function Dashboard() {
                   <div>
                     <FaEthereum size={30} />
                   </div>
-                 <button>
-                  Buy Tokens
-                 </button>
-                </div>
-                <div className="flex items-center justify-center mt-16">
-                  {" "}
-                  <FaEthereum size={30} />{" "}
                 </div>
                 <div className="mt-2 font-semibold">20 STP</div>
               </div>
+              <button className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-20 cursor-pointer">
+                Buy Tokens
+              </button>
               <button className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-20 cursor-pointer">
                 Become A Validator
               </button>
