@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import * as THREE from "three";
 import Map from '../Map';
 import { TweenMax,Power1 } from 'gsap/gsap-core';
@@ -7,6 +7,7 @@ import Modal from '../Modal';
 // import Navbar from '../Navbar';
 
 const City2 = () => {
+  const [ismodalshown, setismodalshown] = useState(false)
   var camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 500);
   // var navy=0,navx=0;
     useEffect(() => {
@@ -3815,9 +3816,19 @@ const City2 = () => {
           }
         ]
         jso.forEach(element=>{
+          var count=1;
           loader.parse(
             element,
             function (object) {
+              // if(count===3)
+              // {
+                // console.log(object.material.uuid)
+                if(object.material.uuid==="B03EF53D-C3F6-40B7-96DC-71E198BACB1A")
+                {
+                  object.material.color.set(0xBDB5D5)
+                }
+                count++;
+              // }
               scene.add(object);
             },
             function (error) {
@@ -3901,7 +3912,7 @@ const City2 = () => {
               if(camera.position.z<=18)
               {
                 camera.position.z += event.deltaY / 500;
-                console.log(camera.position.z)
+                // console.log(camera.position.z)
               }
             }
         }
@@ -3913,8 +3924,10 @@ const City2 = () => {
             var intersects = raycaster.intersectObjects(scene.children);
             if (intersects.length > 0) {
               // window.alert("Do you want to buy this building")
-              intersects[0].object.material.color.set(0xff0000);
-
+              // intersects[0].object.material.color.set(0xff0000);
+              // console.log(intersects[0].object.material.uuid);
+              // setismodalshown(!ismodalshown)
+              // <Modal />
             }
         }
       
@@ -3966,7 +3979,10 @@ const City2 = () => {
     
   return (
     <>
-    <Map />
+      <Map />
+      {
+        ismodalshown && <Modal/>
+      }
     </>
   )
 }
