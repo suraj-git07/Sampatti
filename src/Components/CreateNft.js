@@ -18,8 +18,8 @@ function CreateNft({ toggleCreate, create }) {
   const [image, setImage] = useState("");
 
   const nftrequest = async () => {
-    // nft creation request
     // push broadcast
+    
   };
 
   return (

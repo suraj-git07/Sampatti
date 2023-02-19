@@ -1,9 +1,9 @@
 import { React, useState } from "react";
 import { FaEthereum } from "react-icons/fa";
 import CreateNft from "./CreateNft";
-import meta1 from "../metadata/1.json"
-import meta2 from "../metadata/2.json"
-import meta3 from "../metadata/3.json"
+import meta1 from "../metadata/1.json";
+import meta2 from "../metadata/2.json";
+import meta3 from "../metadata/3.json";
 import "./CSS/dashboard.css";
 function Dashboard() {
   return (
@@ -16,7 +16,9 @@ function Dashboard() {
           <div className=" flex justify-center items-center gap-x-12 ">
             {/* LEFT HERO */}
             <div>
-              <div className="text-slate-200 text-3xl font-bold">My Proposals/Assets</div>
+              <div className="text-slate-200 text-3xl font-bold">
+                My Proposals/Assets
+              </div>
               <div className="flex gap-5 basis-2/3 mt-20">
                 <div class="card 1">
                   <div class="card_image">
@@ -62,7 +64,7 @@ function Dashboard() {
                 />
               </div>
               {/* <div className="text-slate-300 pt-6">Welcome</div> */}
-              <div className="mt-1 text-2xl font-semibold">Dhruv Aeron</div>
+              <div className="mt-1 text-2xl font-semibold">0x56aacac...</div>
               <div>
                 <div className="flex gap-2 items-center justify-center mt-12">
                   {" "}
