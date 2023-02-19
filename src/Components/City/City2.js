@@ -3891,9 +3891,16 @@ const City2 = () => {
         }
         function OnScrollMouse(event) {
             // event.preventDefault();
-            if(camera.position.z<=18)
+            if(event.deltaY<0)
             {
               camera.position.z += event.deltaY / 500;
+            }
+            else{
+              if(camera.position.z<=18)
+              {
+                camera.position.z += event.deltaY / 500;
+                console.log(camera.position.z)
+              }
             }
         }
 
