@@ -17,24 +17,36 @@ function Dashboard() {
             {/* LEFT HERO */}
             <div>
               <div className="text-slate-200 text-3xl font-bold">
-                Your NFT's
+                Your NFT
               </div>
               <div className="flex gap-5 basis-2/3 mt-20">
-                <img
-                  className="h-48 rounded-3xl "
-                  src={meta1.image}
-                  alt=""
-                />
-                <img
-                  className="h-48 rounded-3xl "
-                  src={meta2.image}
-                  alt=""
-                />
-                <img
-                  className="h-48 rounded-3xl "
-                  src={meta3.image}
-                  alt=""
-                />
+                <div class="card 1">
+                  <div class="card_image">
+                    {" "}
+                    <img src={meta1.image} />{" "}
+                  </div>
+                  <div class="card_title title-white">
+                    <p>{meta1.name}</p>
+                  </div>
+                </div>
+                <div class="card 1">
+                  <div class="card_image">
+                    {" "}
+                    <img src={meta2.image} />{" "}
+                  </div>
+                  <div class="card_title title-white">
+                    <p>{meta2.name}</p>
+                  </div>
+                </div>
+                <div class="card 1">
+                  <div class="card_image">
+                    {" "}
+                    <img src={meta3.image} />{" "}
+                  </div>
+                  <div class="card_title title-white">
+                    <p>{meta3.name}</p>
+                  </div>
+                </div>
               </div>
               {/* <button className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-64 cursor-pointer">
                 Create Your NFT
@@ -43,7 +55,7 @@ function Dashboard() {
 
             {/* Right Hero */}
             <div className="basis-1/5 flex flex-col items-center justify-center mt-12 dash-blur h-[85vh]">
-              <div className="px-4 py-4">Logo</div>
+              {/* <div className="px-4 py-4">Logo</div> */}
               <div>
                 <img
                   src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-2.jpg"
@@ -51,7 +63,7 @@ function Dashboard() {
                   className="h-32 border-2 border-slate-300 shadow-md shadow-[#FF6447] rounded-full"
                 />
               </div>
-              <div className="text-slate-300 pt-6">Welcome</div>
+              {/* <div className="text-slate-300 pt-6">Welcome</div> */}
               <div className="mt-1 text-2xl font-semibold">Dhruv Aeron</div>
               <div>
                 <div className="flex gap-2 items-center justify-center mt-12">
