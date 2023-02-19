@@ -15,7 +15,7 @@ function Modal() {
               <div>Phone No : </div>
             </div>
           </div>
-          <div className="basis-1/2">{/* <Player1 link name /> */}</div>
+          <div className="basis-1/2"><Player1 link name /></div>
         </div>
       </div>
     </div>
