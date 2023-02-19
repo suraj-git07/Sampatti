@@ -20,9 +20,7 @@ function Sidebar() {
   const toggleCreate = () => {
     setCreate(!create);
   };
-  const st = () => {
-    modal.stopPropagation();
-  };
+
 
   return (
     <>
