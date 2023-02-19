@@ -7,13 +7,28 @@ import City2 from "./Components/City/City2";
 import Login from "./Components/Login";
 import Loginicon from "./Components/LoginIcon";
 // import Dashboard from "./Components/Dashboard";
+import useArcanaAuth from "./Components/useArcanaAuth";
 
 function App() {
+  const {
+    initializeAuth,
+    loggedIn,
+    getAccounts,
+    login,
+    loginWithLink,
+    logout,
+    initialized,
+  } = useArcanaAuth();
+
+  const loadblockchainData = async()=>{
+    
+  }
+
   return (
     <div>
       <Router>
         <Sidebar />
-        <Loginicon/>
+        <Loginicon />
         <Routes>
           <Route path="/" element={<City2 />} />
           {/* <Route path="/login" element={<Login />} /> */}

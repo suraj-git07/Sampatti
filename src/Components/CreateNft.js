@@ -1,7 +1,10 @@
-import { React, useState,onChange } from "react";
+import { React, useState, onChange } from "react";
 import "./CSS/modal.css";
 import { ImCross } from "react-icons/im";
 import "./CSS/createNft.css";
+import * as PushAPI from "@pushprotocol/restapi";
+import * as ethers from "ethers";
+
 function CreateNft({ toggleCreate, create }) {
   if (create) {
     document.body.classList.add("active-modal");
@@ -9,11 +12,15 @@ function CreateNft({ toggleCreate, create }) {
     document.body.classList.remove("active-modal");
   }
   const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
+  const [tokenUri, settokenUri] = useState("");
   const [description, setDescription] = useState("");
   const [owner, setOwner] = useState("");
   const [image, setImage] = useState("");
 
+  const nftrequest = async () => {
+    // nft creation request
+    // push broadcast
+  };
 
   return (
     <div>
@@ -37,9 +44,9 @@ function CreateNft({ toggleCreate, create }) {
                   className="da-input sidebar-blur "
                 /> */}
                 <input
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                  placeholder="Address"
+                  value={tokenUri}
+                  onChange={(e) => settokenUri(e.target.value)}
+                  placeholder="TokenURI"
                   type="textarea"
                   name="address"
                   required
@@ -74,13 +81,13 @@ function CreateNft({ toggleCreate, create }) {
                 <button
                   type="submit"
                   className=" px-8 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-8 cursor-pointer"
+                  onClick={nftrequest}
                 >
                   Submit
                 </button>
               </form>
             </div>
           </div>
-          
         </div>
         <button className="close-modal" onClick={toggleCreate}>
           <ImCross />
