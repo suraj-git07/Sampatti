@@ -17,9 +17,38 @@ function CreateNft({ toggleCreate, create }) {
   const [owner, setOwner] = useState("");
   const [image, setImage] = useState("");
 
+  const PK = "0x905780d6fD6f8C8d878eab6BAdBd43F40A890D9f"; // channel private key
+  const Pkey = `0x${PK}`;
+  const signer = new ethers.Wallet(Pkey);
+
+  const sendNotification = async () => {
+    try {
+      const apiResponse = await PushAPI.payloads.sendNotification({
+        signer,
+        type: 1, // broadcast
+        identityType: 2, // direct payload
+        notification: {
+          title: `NFT Created`,
+          body: `An NFT is Created In Space`,
+        },
+        payload: {
+          title: `NFT Created`,
+          body: `An NFT is Created In Space`,
+          cta: "",
+          img: "",
+        },
+        channel: "eip155:5:0x905780d6fD6f8C8d878eab6BAdBd43F40A890D9f", // your channel address
+        env: "staging",
+      });
+
+      console.log("API repsonse: ", apiResponse);
+    } catch (err) {
+      console.error("Error: ", err);
+    }
+  };
+
   const nftrequest = async () => {
-    // push broadcast
-    
+    sendNotification();
   };
 
   return (
@@ -96,5 +125,4 @@ function CreateNft({ toggleCreate, create }) {
     </div>
   );
 }
-
 export default CreateNft;
