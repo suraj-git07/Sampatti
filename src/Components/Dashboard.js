@@ -63,7 +63,7 @@ function Dashboard() {
                     <FaEthereum size={30} />
                   </div>
                 </div>
-                <div className="mt-2 font-semibold">20 STP</div>
+                <div className="mt-2 font-semibold">20 SPT</div>
               </div>
               <button className="  px-4 py-2 font-bold rounded-md text-lg shadow-md shadow-white mt-20 cursor-pointer">
                 Buy Tokens
