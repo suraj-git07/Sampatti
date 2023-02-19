@@ -2,6 +2,8 @@ import {useEffect} from 'react'
 import * as THREE from "three";
 import Map from '../Map';
 import { TweenMax,Power1 } from 'gsap/gsap-core';
+import Building from '../Building';
+import Modal from '../Modal';
 // import Navbar from '../Navbar';
 
 const City2 = () => {
@@ -3911,9 +3913,11 @@ const City2 = () => {
             var intersects = raycaster.intersectObjects(scene.children);
             if (intersects.length > 0) {
               // window.alert("Do you want to buy this building")
-                intersects[0].object.material.color.set(0xff0000);
+              intersects[0].object.material.color.set(0xff0000);
+
             }
         }
+      
         window.addEventListener('mousemove', onMouseMove, false);
         window.addEventListener('wheel', OnScrollMouse, false);
         window.addEventListener('click', onDocumentMouseDown, false);

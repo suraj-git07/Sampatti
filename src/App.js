@@ -6,6 +6,7 @@ import "./App.css";
 import City2 from "./Components/City/City2";
 import Login from "./Components/Login";
 import Loginicon from "./Components/LoginIcon";
+import Modal from "./Components/Modal";
 // import Dashboard from "./Components/Dashboard";
 import useArcanaAuth from "./Components/useArcanaAuth";
 
@@ -28,7 +29,9 @@ function App() {
     <div>
       <Router>
         <Sidebar />
+        {/* <Modal /> */}
         <Loginicon />
+
         <Routes>
           <Route path="/" element={<City2 />} />
           {/* <Route path="/login" element={<Login />} /> */}
