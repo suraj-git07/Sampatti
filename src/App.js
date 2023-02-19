@@ -8,8 +8,23 @@ import Login from "./Components/Login";
 import Loginicon from "./Components/LoginIcon";
 import Modal from "./Components/Modal";
 // import Dashboard from "./Components/Dashboard";
+import useArcanaAuth from "./Components/useArcanaAuth";
 
 function App() {
+  const {
+    initializeAuth,
+    loggedIn,
+    getAccounts,
+    login,
+    loginWithLink,
+    logout,
+    initialized,
+  } = useArcanaAuth();
+
+  const loadblockchainData = async()=>{
+    
+  }
+
   return (
     <div>
       <Router>

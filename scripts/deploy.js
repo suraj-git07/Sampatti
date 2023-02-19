@@ -42,9 +42,9 @@ async function main() {
     const transaction = await nftMintContract
       .connect(goalCreator)
       .safeMint(
-        `https://ipfs.io/pfs/QmaLPPtMjTEVRDNcmEUkRh6LyduiStFFcvuPshmxrkmDZT/${
+        `${
           i + 1
-        }.json`
+        }.jsonhttps://ipfs.io/pfs/QmaLPPtMjTEVRDNcmEUkRh6LyduiStFFcvuPshmxrkmDZT/`
       );
     await transaction.wait();
   }

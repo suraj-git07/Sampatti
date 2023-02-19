@@ -1,0 +1,14 @@
+{
+"NFTMint": "0xa70024a597735838031178e2d2a72d7aec25d9aa",
+"Sampatti": "0x4a571b793e196d79b16605eead734664725bad87",
+"SPTToken": "0xf4e8601bc9eb86beba458df6ace0c45149be7b93",
+
+"owner": "0x905780d6fd6f8c8d878eab6badbd43f40a890d9f",
+"creator_validator1": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+"validator2": "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+"validator3": "0x56aacac26721b4014f14f724b1a87b98448a3a07",
+
+"tokenuri1": "https://ipfs.io/pfs/QmaLPPtMjTEVRDNcmEUkRh6LyduiStFFcvuPshmxrkmDZT/1.json",
+"tokenuri2": "https://ipfs.io/pfs/QmaLPPtMjTEVRDNcmEUkRh6LyduiStFFcvuPshmxrkmDZT/2.json",
+"tokenuri3": "https://ipfs.io/pfs/QmaLPPtMjTEVRDNcmEUkRh6LyduiStFFcvuPshmxrkmDZT/3.json"
+}
