@@ -1,4 +1,4 @@
-import { React, useState,useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
@@ -8,6 +8,7 @@ import { IoIosCreate } from "react-icons/io";
 import Dashboard from "./Dashboard";
 import Navbar from "./Navbar";
 import CreateNft from "./CreateNft";
+import Validator from "./Validator";
 
 function Sidebar() {
   const [show, setshow] = useState(false);
@@ -21,6 +22,10 @@ function Sidebar() {
     setCreate(!create);
   };
 
+  const [val, setVal] = useState(false);
+  const toggleVal = () => {
+    setVal(!val);
+  };
 
   return (
     <>
@@ -47,12 +52,16 @@ function Sidebar() {
               {modal && <Dashboard />}
             </div>
           </div>
-          <div className="cursor-pointer hover:text-slate-400">
+          {/* ????????? */}
+          <div className="cursor-pointer hover:text-slate-400" onClick={toggleVal}>
             <div className="flex justify-center items-center gap-x-2">
               <HiUserGroup size={32} />
               {show && <div className="text-xl  ">Validator</div>}
             </div>
+
+          {val&&<Validator toggleValidator={toggleVal} validator={val}  />}
           </div>
+          {/* kmmkomo */}
           <div
             className="cursor-pointer hover:text-slate-400 "
             onClick={toggleCreate}
@@ -65,7 +74,7 @@ function Sidebar() {
           {create && <CreateNft toggleCreate={toggleCreate} create={create} />}
           {/* </div> */}
         </div>
-        {!modal && !create && <Navbar />}
+        {!modal && !create &&!val&& <Navbar />}
       </div>
     </>
   );
