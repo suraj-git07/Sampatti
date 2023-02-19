@@ -11,27 +11,13 @@ import Modal from "./Components/Modal";
 import useArcanaAuth from "./Components/useArcanaAuth";
 
 function App() {
-  const {
-    initializeAuth,
-    loggedIn,
-    getAccounts,
-    login,
-    loginWithLink,
-    logout,
-    initialized,
-  } = useArcanaAuth();
-
-  const loadblockchainData = async()=>{
-    
-  }
-
   return (
     <div>
       <Router>
         <Sidebar />
         {/* <Modal /> */}
         <Loginicon />
-
+        <img src={require("./Components/sampatti.png")} alt=""  className="fixed top-4 left-4 h-24 cursor-pointer"/>
         <Routes>
           <Route path="/" element={<City2 />} />
           {/* <Route path="/login" element={<Login />} /> */}
