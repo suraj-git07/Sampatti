@@ -31,7 +31,7 @@ function Modal() {
                 </div>{" "}
                 <div className="flex justify-center items-center text-slate-200">
                   {meta.address}
-                </div>{" "}
+                </div>{" "} 
               </div>
               <div className="flex flex-row gap-2  mt-2 ">
                 <div className="text-xl font-semibold w-32  flex justify-start">
