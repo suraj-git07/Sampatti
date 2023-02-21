@@ -3,11 +3,22 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import {
+  LivepeerConfig,
+  createReactClient,
+  studioProvider,
+} from '@livepeer/react';
+ 
+const client = createReactClient({
+  provider: studioProvider({ apiKey: 'f2041ae4-6eb8-4b9d-bfd5-6117818e3291' }),
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <LivepeerConfig client={client} >
+      <App />
+    </LivepeerConfig>
   </React.StrictMode>
 );
 
